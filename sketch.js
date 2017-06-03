@@ -22,6 +22,13 @@ function draw() {
 		if (p.isOutScreen()) {
 			pipes.splice(target.length - 1 - i, 1);
 		}
+
+		if (p.hit(bird)) {
+			console.log("HIT");
+			p.highlight = true;
+		} else {
+			p.highlight = false;
+		}
 	});
 }
 
