@@ -15,9 +15,13 @@ function draw() {
 		pipes.push(new Pipe());
 	}
 
-	pipes.forEach(function(p){
+	// update pipes position in reverse mode to be able mutate target array
+	pipes.slice().reverse().forEach(function(p, i, target){
 		p.update();
 		p.show();
+		if (p.isOutScreen()) {
+			pipes.splice(target.length - 1 - i, 1);
+		}
 	});
 }
 

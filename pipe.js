@@ -9,10 +9,14 @@ function Pipe() {
 	this.show = function() {
 		fill(255);
 		rect(this.x, 0, this.width, this.top);
-		rect(this.x, height - this.bottom, this.width, height);
+		rect(this.x, height - this.bottom, this.width, this.bottom);
 	}
 
 	this.update = function() {
 		this.x -= this.speed;
+	}
+
+	this.isOutScreen = function() {
+		return this.x < -this.width;
 	}
 }
