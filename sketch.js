@@ -1,6 +1,6 @@
 var bird, pipes = [];
 function setup() {
-	createCanvas(400, 600);
+	createCanvas(window.innerWidth, window.innerHeight);
 	bird = new Bird();
 }
 
